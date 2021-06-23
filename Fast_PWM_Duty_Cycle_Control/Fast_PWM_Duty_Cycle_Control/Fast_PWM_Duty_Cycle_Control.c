@@ -5,6 +5,11 @@
  * Author : vaibhav
  */ 
 
+/*
+About : Program is about Duty cycle control using ouput compare register.
+
+*/
+
 #define F_CPU 16000000
 #include <avr/io.h>
 #include <util/delay.h>
@@ -33,7 +38,7 @@ void timer_init()
 	TCCR0A |= ( (1<<WGM01) | (1<<WGM00) | (1<<COM0A1)); // Non-inverting and Fast PWM
 	TCCR0A &=~( (1<<COM0A0) | (1<<COM0B0) | (1<<COM0B1));
 	
-	TCCR0B |= ( (1<<CS02) | (1<<CS00) ); // pre-scalar=8..... - 16MHz/8*256 = 8kHz(approx)
+	TCCR0B |= ( (1<<CS02) | (1<<CS00) ); 
 	TCCR0B &=~( (1<<CS01) );
 	
 	
