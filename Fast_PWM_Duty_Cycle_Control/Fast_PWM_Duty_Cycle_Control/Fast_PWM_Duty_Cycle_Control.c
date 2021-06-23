@@ -29,7 +29,7 @@ void led_off()
 
 void timer_init()
 {
-	OCR0A = 0; // 50% duty cycle
+	OCR0A = 127; // 50% duty cycle
 	TCCR0A |= ( (1<<WGM01) | (1<<WGM00) | (1<<COM0A1)); // Non-inverting and Fast PWM
 	TCCR0A &=~( (1<<COM0A0) | (1<<COM0B0) | (1<<COM0B1));
 	
